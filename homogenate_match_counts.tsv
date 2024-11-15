@@ -68,8 +68,10 @@
 "Bradysia"	"Arthropoda"	"Insecta"	"Diptera"	"Sciaridae"	"SZNYJX"	0	"Sciaridae_cluster100"	"ecc79bdaec49ac8d6e478b41187a9a74"	"Animalia"	86
 "Brassicogethes"	"Arthropoda"	"Insecta"	"Coleoptera"	"Nitidulidae"	"SQYDDG"	1	"Nitidulidae_cluster1"	"cc9adda65b25f26cccd49f9b2c14bb26"	"Animalia"	3863
 "Brassicogethes"	"Arthropoda"	"Insecta"	"Coleoptera"	"Nitidulidae"	"SUXVVU"	0	"Nitidulidae_cluster1"	"cc9adda65b25f26cccd49f9b2c14bb26"	"Animalia"	348
+"Buathra"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Ichneumonidae"	"SDD4G5"	1	"Ichneumonidae_cluster21"	"804abd32ae7c10df2b0e0b8bf261b4bf"	"Animalia"	0
 "Buathra"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Ichneumonidae"	"SM6D3B"	0	"Ichneumonidae_cluster21"	"804abd32ae7c10df2b0e0b8bf261b4bf"	"Animalia"	289
 "Calliphora"	"Arthropoda"	"Insecta"	"Diptera"	"Calliphoridae"	"SCECHR"	1	"Calliphoridae_cluster2"	"7f9734df0c9c8fab30511a2e225c1175"	"Animalia"	34849
+"Calliphora"	"Arthropoda"	"Insecta"	"Diptera"	"Calliphoridae"	"SGZUHD"	1	"Calliphoridae_cluster2"	"7f9734df0c9c8fab30511a2e225c1175"	"Animalia"	0
 "Calliphora"	"Arthropoda"	"Insecta"	"Diptera"	"Calliphoridae"	"SHLY4A"	0	"Calliphoridae_cluster2"	"7f9734df0c9c8fab30511a2e225c1175"	"Animalia"	4712
 "Calliphora"	"Arthropoda"	"Insecta"	"Diptera"	"Calliphoridae"	"SK91LD"	0	"Calliphoridae_cluster2"	"7f9734df0c9c8fab30511a2e225c1175"	"Animalia"	6585
 "Calliphora"	"Arthropoda"	"Insecta"	"Diptera"	"Calliphoridae"	"SSJSP9"	0	"Calliphoridae_cluster2"	"7f9734df0c9c8fab30511a2e225c1175"	"Animalia"	5745
@@ -131,6 +133,7 @@
 "Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SM6D3B"	1	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	37117
 "Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SQ1CGZ"	1	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	989
 "Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SQYDDG"	1	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	59934
+"Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SUNVYF"	1	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	0
 "Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SUXVVU"	0	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	43421
 "Delia"	"Arthropoda"	"Insecta"	"Diptera"	"Anthomyiidae"	"SZCD49"	0	"Anthomyiidae_cluster1"	"df166ecd01ca78133b4f6698d287e1b4"	"Animalia"	362
 "Dolichovespula"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Vespidae"	"SQ1CGZ"	1	"Vespidae_cluster1"	"87dbac9dee4226bb8b096c47427610ab"	"Animalia"	4379
@@ -290,6 +293,7 @@
 "Pemphredon"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Crabronidae"	"SQYDDG"	1	"Crabronidae_cluster23"	"742d06ffe1890d13807b78afb58b3dca"	"Animalia"	111
 "Pemphredon"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Crabronidae"	"SSY7BM"	1	"Crabronidae_cluster23"	"742d06ffe1890d13807b78afb58b3dca"	"Animalia"	591
 "Pemphredon"	"Arthropoda"	"Insecta"	"Hymenoptera"	"Crabronidae"	"SZCD49"	0	"Crabronidae_cluster23"	"742d06ffe1890d13807b78afb58b3dca"	"Animalia"	7
+"Philaenus"	"Arthropoda"	"Insecta"	"Hemiptera"	"Aphrophoridae"	"SCFYMN"	1	"Aphrophoridae_cluster1"	"1d51dc7258ee5af11dc556a08706dc35"	"Animalia"	0
 "Philaenus"	"Arthropoda"	"Insecta"	"Hemiptera"	"Aphrophoridae"	"SHLY4A"	1	"Aphrophoridae_cluster1"	"1d51dc7258ee5af11dc556a08706dc35"	"Animalia"	881
 "Philaenus"	"Arthropoda"	"Insecta"	"Hemiptera"	"Aphrophoridae"	"SK91LD"	1	"Aphrophoridae_cluster1"	"1d51dc7258ee5af11dc556a08706dc35"	"Animalia"	3775
 "Pieris"	"Arthropoda"	"Insecta"	"Lepidoptera"	"Pieridae"	"SKA8NJ"	1	"Pieridae_cluster4"	"ab817258e895263198e65f1f90f8ae8e"	"Animalia"	1097
@@ -315,6 +319,8 @@
 "Plutella"	"Arthropoda"	"Insecta"	"Lepidoptera"	"Plutellidae"	"ST2SCC"	0	"Plutellidae_cluster1"	"087f44176622633b011d54a72c4c9a4f"	"Animalia"	480
 "Plutella"	"Arthropoda"	"Insecta"	"Lepidoptera"	"Plutellidae"	"SUTTXP"	1	"Plutellidae_cluster1"	"087f44176622633b011d54a72c4c9a4f"	"Animalia"	4689
 "Plutella"	"Arthropoda"	"Insecta"	"Lepidoptera"	"Plutellidae"	"SUXVVU"	1	"Plutellidae_cluster1"	"087f44176622633b011d54a72c4c9a4f"	"Animalia"	53272
+"Polietes"	"Arthropoda"	"Insecta"	"Diptera"	"Muscidae"	"SCFYMN"	1	"Muscidae_cluster28"	"283789fc5df13346b7471097d52ec08f"	"Animalia"	0
+"Polietes"	"Arthropoda"	"Insecta"	"Diptera"	"Muscidae"	"SCNXZK"	1	"Muscidae_cluster28"	"283789fc5df13346b7471097d52ec08f"	"Animalia"	0
 "Polietes"	"Arthropoda"	"Insecta"	"Diptera"	"Muscidae"	"SK91LD"	0	"Muscidae_cluster28"	"283789fc5df13346b7471097d52ec08f"	"Animalia"	8607
 "Polietes"	"Arthropoda"	"Insecta"	"Diptera"	"Muscidae"	"SM6D3B"	0	"Muscidae_cluster28"	"283789fc5df13346b7471097d52ec08f"	"Animalia"	13650
 "Polietes"	"Arthropoda"	"Insecta"	"Diptera"	"Muscidae"	"SQ1CGZ"	0	"Muscidae_cluster28"	"283789fc5df13346b7471097d52ec08f"	"Animalia"	194

@@ -94,15 +94,16 @@ H2 <- reshape2::melt(H1,id.vars=1:8,measure.vars=9:48,value.name="reads")
 G2 <- reshape2::melt(G,id.vars=1:5,measure.vars=6:45,value.name="present")
 
 DL <- merge(G2,L2)
-DL <- DL[DL$reads > 0,]     # If not detected with metabarcoding, assume it is an error
-DL <- DL[DL$Genus!="Drosophila",]       # This corresponds to spikeins removed in metabarcoding
+DL <- DL[DL$reads > 0 | DL$present==1,]     # Only keep those records detected by either method
+DL <- DL[DL$Genus!="Drosophila",]           # This corresponds to spikeins removed in metabarcoding
+
 DH <- merge(G2,H2)
-DH <- DH[DH$reads > 0,]     # If not detected with metabarcoding, assume it is an error
+DH <- DH[DH$reads > 0 | DH$present==1,]     # Only keep those records detected by either method
 DH <- DH[DH$Genus!="Poecilobothrus",]   # This is an obvious mismatch
 DH <- DH[DH$Genus!="Drosophila",]       # This corresponds to spikeins removed in metabarcoding
 
-#DL$reads <- DL$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
-#DH$reads <- DH$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
+DL$reads <- DL$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
+DH$reads <- DH$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
 
 # Write the resulting tables
 write.table(DL, "lysate_match_counts.tsv", sep="\t", row.names=FALSE)
@@ -112,7 +113,7 @@ write.table(DH, "homogenate_match_counts.tsv", sep="\t", row.names=FALSE)
 # used the homogenate from these samples
 
 # Run a T test on homogenate data
-t.test(x=DH$reads[DH$present==1],y=DH$reads[DH$present==0])
+print(t.test(x=DH$reads[DH$present==1],y=DH$reads[DH$present==0]))
 
 # Generate a box plot for homogenate data
 pdf("Fig_SX.pdf")
