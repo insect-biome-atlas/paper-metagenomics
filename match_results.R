@@ -102,8 +102,8 @@ DH <- DH[DH$reads > 0 | DH$present==1,]     # Only keep those records detected b
 DH <- DH[DH$Genus!="Poecilobothrus",]   # This is an obvious mismatch
 DH <- DH[DH$Genus!="Drosophila",]       # This corresponds to spikeins removed in metabarcoding
 
-DL$reads <- DL$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
-DH$reads <- DH$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
+#DL$reads <- DL$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
+#DH$reads <- DH$reads + 1    # Avoid -inf log value for 0 reads (if 0-read entries not removed above)
 
 # Write the resulting tables
 write.table(DL, "lysate_match_counts.tsv", sep="\t", row.names=FALSE)
@@ -117,5 +117,15 @@ print(t.test(x=DH$reads[DH$present==1],y=DH$reads[DH$present==0]))
 
 # Generate a box plot for homogenate data
 pdf("Fig_SX.pdf")
-boxplot(DH$reads~DH$present,log="y")
+boxplot((DH$reads+1)~DH$present,log="y")
 dev.off()
+
+# Assemble data frame with all data included
+L3 <- L2
+H3 <- H2
+colnames(L3)[10]<-"lys_reads"
+colnames(H3)[10]<-"hom_reads"
+D <- merge(merge(G2,L3),H3)
+D <- D[D$lys_reads > 0 | D$hom_reads > 0 | D$present==1,]
+write.table(D, "all_match_counts.tsv", sep="\t", row.names=FALSE)
+
