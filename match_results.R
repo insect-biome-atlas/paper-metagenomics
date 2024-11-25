@@ -89,9 +89,9 @@ write.table(L1, "iba_lysate_genus_counts.tsv", sep="\t", row.names=FALSE)
 write.table(H1, "iba_homogenate_genus_counts.tsv", sep="\t", row.names=FALSE)
 
 # Make box plots
-L2 <- reshape2::melt(L1,id.vars=1:8,measure.vars=9:48,value.name="reads")
-H2 <- reshape2::melt(H1,id.vars=1:8,measure.vars=9:48,value.name="reads")
-G2 <- reshape2::melt(G,id.vars=1:5,measure.vars=6:45,value.name="present")
+L2 <- reshape2::melt(L1,id.vars=1:8,measure.vars=9:48,variable.name="sample",value.name="reads")
+H2 <- reshape2::melt(H1,id.vars=1:8,measure.vars=9:48,variable.name="sample",value.name="reads")
+G2 <- reshape2::melt(G,id.vars=1:5,measure.vars=6:45,variable.name="sample",value.name="present")
 
 DL <- merge(G2,L2)
 DL <- DL[DL$reads > 0 | DL$present==1,]     # Only keep those records detected by either method
@@ -112,8 +112,17 @@ write.table(DH, "homogenate_match_counts.tsv", sep="\t", row.names=FALSE)
 # We focus below on the homogenate data, as the metagenomic analysis
 # used the homogenate from these samples
 
+# Run a T test on lysate data
+print("T test on raw values from lysates")
+print(t.test(x=DL$reads[DL$present==1],y=DL$reads[DL$present==0]))
+print ("T test on log values from lysates")
+print(t.test(x=log(DL$reads[DL$present==1]+1),y=log(DL$reads[DL$present==0]+1)))
+
 # Run a T test on homogenate data
+print("T test on raw values from homogenates")
 print(t.test(x=DH$reads[DH$present==1],y=DH$reads[DH$present==0]))
+print ("T test on log values from homogenates")
+print(t.test(x=log(DH$reads[DH$present==1]+1),y=log(DH$reads[DH$present==0]+1)))
 
 # Generate a box plot for homogenate data
 pdf("Fig_SX.pdf")
@@ -121,11 +130,17 @@ boxplot((DH$reads+1)~DH$present,log="y")
 dev.off()
 
 # Assemble data frame with all data included
-L3 <- L2
-H3 <- H2
-colnames(L3)[10]<-"lys_reads"
-colnames(H3)[10]<-"hom_reads"
-D <- merge(merge(G2,L3),H3)
-D <- D[D$lys_reads > 0 | D$hom_reads > 0 | D$present==1,]
-write.table(D, "all_match_counts.tsv", sep="\t", row.names=FALSE)
+DL1 <- merge(G2,L2)
+DL1 <- DL1[DL1$Genus!="Drosophila",]           # This corresponds to spikeins removed in metabarcoding
+
+DH1 <- merge(G2,H2)
+DH1 <- DH1[DH1$Genus!="Poecilobothrus",]   # This is an obvious mismatch
+DH1 <- DH1[DH1$Genus!="Drosophila",]       # This corresponds to spikeins removed in metabarcoding
+
+colnames(DL1)[which(colnames(DL1)=="reads")] <- "lysate_reads"
+colnames(DH1)[which(colnames(DH1)=="reads")] <- "homogenate_reads"
+
+D <- merge(DL1,DH1,by=c("Genus","Family","Order","Class","Phylum","Kingdom","sample","present"))
+D1 <- D[D$lysate_reads > 0 | D$homogenate_reads > 0 | D$present==1,]
+write.table(D1, "all_match_counts.tsv", sep="\t", row.names=FALSE)
 
