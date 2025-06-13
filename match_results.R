@@ -11,12 +11,13 @@ G <- read.delim("metagenomics_genus_occurrence.tsv")
 cur_dir <- getwd()
 setwd("~/dev/ms-repos-iba/utils/")
 source("get_iba_co1_data_fxn.R")
+source("spikes_controls_fxns.R")
 setwd(cur_dir)
 
 # Set IBA data paths
 # TODO: Change to your local paths to the IBA data
-data_path <- "~/dev/figshare-repos/iba/processed_data/v2/"
-metadata_path <- "~/dev/figshare-repos/iba/raw_data/v4/"
+data_path <- "~/dev/figshare-repos/iba/processed_data/v3/"
+metadata_path <- "~/dev/figshare-repos/iba/raw_data/v6/"
 
 # Get IBA lysate and homogenate data
 # Note that these are data tables and not standard R data frames
